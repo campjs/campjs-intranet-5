@@ -45,11 +45,8 @@
 
           <div class="container">
             <article id="main" class="special">
-              <header>
-                .
-              </header>
+              <table id="sessions"></table>
             </article>
-            <hr />
           </div>
 
         </div>
@@ -84,6 +81,220 @@
       <script src="assets/js/skel.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
+      <script>
+var days = [
+  {
+    day: "saturday",
+    sessions: [
+      {
+        "name": "High Performance in the Critical Rendering Path",
+        "time": "9am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "React.js",
+        "time": "9:30am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Using WebCrypto to Protect User Data",
+        "time": "10am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "A State of Change",
+        "time": "11am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "The ESNext Generation",
+        "time": "11:30am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "HTTP Headers: The Simplest Security",
+        "time": "12pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "ORTC",
+        "time": "1:30pm",
+        "location": "The Amphitheatre"
+      },
+      // {
+      //   "name": "Libuv Introduction",
+      //   "time": "1:30pm",
+      //   "location": "Coltman Hut Hall"
+      // },
+      // {
+      //   "name": "Libuv Workshop",
+      //   "time": "2pm",
+      //   "location": "Coltman Hut Hall"
+      // },
+      {
+        "name": "Scope Chains & Closures",
+        "time": "2pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Elements of Mercury",
+        "time": "2pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Snap.SVG inside out",
+        "time": "3:30pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Scope Chains & Closures Workshop",
+        "time": "3:30pm",
+        "location": "Coltman Hut Hall"
+      },
+      {
+        "name": "Go & JavaScript",
+        "time": "4pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "glslify",
+        "time": "4:30pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Particularly Particles",
+        "time": "5pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Cross Origin Resource Sharing for Fun & Profit",
+        "time": "5:30pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Webtask: All you need is code",
+        "time": "6pm",
+        "location": "The Amphitheatre"
+      },
+    ],
+  },
+  {
+    day: "sunday",
+    sessions: [
+      {
+        "name": "The Disconnected Ensemble",
+        "time": "9am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Holistic InfoSec For Web Developers Workshop",
+        "time": "9am",
+        "location": "Coltman Hut Hall"
+      },
+      {
+        "name": "Web Audio",
+        "time": "10am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Ops for Dev: How to not get paged",
+        "time": "11am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Web Audio Workshop",
+        "time": "11am",
+        "location": "Coltman Hut Hall"
+      },
+      {
+        "name": "Beyond Simple Payments",
+        "time": "11:30am",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "The Future of Node",
+        "time": "12pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "Distributed Diversity Panel",
+        "time": "1:30pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "High Performance Workshop",
+        "time": "1:30pm",
+        "location": "Coltman Hut Hall"
+      },
+      {
+        "name": "Offline-First Judging",
+        "time": "3:30pm",
+        "location": "The Amphitheatre"
+      },
+      {
+        "name": "The ESNext Generation Workshop",
+        "time": "3:30pm",
+        "location": "Coltman Hut Hall"
+      },
+    ],
+  },
+];
 
+var parseTime = function parseTime(s) {
+  var m = s.match(/(\d+)(?::(\d+))?(am|pm)/i);
+
+  if (!m) {
+    return null;
+  }
+
+  return [].slice.call(m);
+};
+
+var Z = function(name, props, children) {
+  var r = document.createElement(name);
+
+  props = props || Object.create(null);
+  for (var k in props) {
+    r[k] = props[k];
+  }
+
+  children = children || [];
+  for (var i=0;i<children.length;i++) {
+    r.appendChild(children[i]);
+  }
+
+  return r;
+};
+
+var render = function() {
+  var tbl = document.getElementById("sessions");
+
+  tbl.innerHTML = "";
+
+  days.forEach(function(day, i) {
+    tbl.appendChild(Z("tr", null, [
+      Z("th", {colSpan: 3}, [
+        Z("h1", null, [document.createTextNode(day.day.toUpperCase())]),
+      ]),
+    ]));
+
+    day.sessions.forEach(function(session) {
+      tbl.appendChild(Z("tr", null, [
+        Z("td", null, [document.createTextNode(session.location)]),
+        Z("td", null, [document.createTextNode(session.name)]),
+        Z("td", null, [document.createTextNode(session.time)]),
+      ]));
+    });
+
+    if (i !== days.length - 1) {
+      tbl.appendChild(Z("tr", null, [
+        Z("th", {colSpan: 3}, [Z("hr")]),
+      ]));
+    }
+  });
+};
+
+render();
+      </script>
   </body>
 </html>

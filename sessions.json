@@ -1,0 +1,147 @@
+[
+  {
+    "name": "High Performance in the Critical Rendering Path",
+    "time": "Saturday 9am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "React.js",
+    "time": "Saturday 9:30am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Using WebCrypto to Protect User Data",
+    "time": "Saturday 10am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "A State of Change",
+    "time": "Saturday 11am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "The ESNext Generation",
+    "time": "Saturday 11:30am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "HTTP Headers: The Simplest Security",
+    "time": "Saturday 12pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "ORTC",
+    "time": "Saturday 1:30pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Scope Chains & Closures",
+    "time": "Saturday 2pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Elements of Mercury",
+    "time": "Saturday 2pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Snap.SVG inside out",
+    "time": "Saturday 3:30pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Go & JavaScript",
+    "time": "Saturday 4pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "glslify",
+    "time": "Saturday 4:30pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Particularly Particles",
+    "time": "Saturday 5pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Cross Origin Resource Sharing for Fun & Profit",
+    "time": "Saturday 5:30pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Webtask: All you need is code",
+    "time": "Saturday 6pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "The Disconnected Ensemble",
+    "time": "Sunday 9am - Sunday 10am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Web Audio",
+    "time": "Sunday 10am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Ops for Dev: How to not get paged",
+    "time": "Sunday 11am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Beyond Simple Payments",
+    "time": "Sunday 11:30am",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "The Future of Node",
+    "time": "Sunday 12pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Distributed Diversity Panel",
+    "time": "Sunday 1:30pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Offline-First Judging",
+    "time": "Sunday 3:30pm",
+    "location": "The Amphitheatre"
+  },
+  {
+    "name": "Libuv Introduction",
+    "time": "Saturday 1:30pm",
+    "location": "Coltman Hut Hall"
+  },
+  {
+    "name": "Libuv Workshop",
+    "time": "Saturday 2pm",
+    "location": "Coltman Hut Hall"
+  },
+  {
+    "name": "Scope Chains & Closures Workshop",
+    "time": "Saturday 4:30pm ????????????",
+    "location": "Coltman Hut Hall"
+  },
+  {
+    "name": "Holistic InfoSec For Web Developers Workshop",
+    "time": "Sunday 9am",
+    "location": "Coltman Hut Hall"
+  },
+  {
+    "name": "Web Audio Workshop",
+    "time": "Sunday 11am",
+    "location": "Coltman Hut Hall"
+  },
+  {
+    "name": "High Performance Workshop",
+    "time": "Sunday 1:30pm",
+    "location": "Coltman Hut Hall"
+  },
+  {
+    "name": "The ESNext Generation Workshop",
+    "time": "Sunday 3:30pm",
+    "location": "Coltman Hut Hall"
+  }
+]

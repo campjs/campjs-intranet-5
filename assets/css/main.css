@@ -1977,9 +1977,48 @@
 				border-bottom: solid 2px #e5e5e5;
 			}
 
+			table.default caption {
+				font-weight: bold;
+				font-size: 2em;
+				line-height: 1em;
+				padding: .25em .5em .25em .5em;
+			}
+
 			table.default tfoot {
 				border-top: solid 2px #e5e5e5;
 			}
+
+/* Responsive Tables */
+
+  @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    table.default,
+    table.default thead,
+    table.default tbody,
+    table.default th,
+    table.default td,
+    table.default tr { 
+      display: block; 
+    }
+
+    table.default thead tr { 
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    table.default td {
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    table.default td:before {
+      display: inline-block;
+      font-weight: bold;
+      padding-right: .5em;
+      white-space: nowrap;
+    }
+  }
 
 /* Button */
 

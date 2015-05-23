@@ -13,6 +13,14 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie/v8.css" /><![endif]-->
     <!--[if lte IE 8]><script src="assets/css/ie/respond.min.js"></script><![endif]-->
+    <style>
+    @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+      table.schedule td:nth-of-type(1):before { content: "Location:"; }
+      table.schedule td:nth-of-type(2):before { content: "Name:"; }
+      table.schedule td:nth-of-type(3):before { content: "Who:"; }
+      table.schedule td:nth-of-type(4):before { content: "Time:"; }
+    }
+    </style>
   </head>
   <body class="no-sidebar">
     <div id="page-wrapper">
@@ -45,7 +53,7 @@
 
           <div class="container">
             <article id="main" class="special">
-              <table id="sessions"></table>
+              <table id="sessions" class="default"></table>
             </article>
           </div>
 
@@ -84,7 +92,7 @@
       <script>
 var days = [
   {
-    day: "saturday",
+    day: "Saturday",
     sessions: [
       {
         "name": "Breakfast",
@@ -231,7 +239,7 @@ var days = [
     ],
   },
   {
-    day: "sunday",
+    day: "Sunday",
     sessions: [
       {
         "name": "Breakfast",
@@ -366,30 +374,33 @@ var Z = function(name, props, children) {
 };
 
 var render = function() {
-  var tbl = document.getElementById("sessions");
+  var tableContainer = document.getElementById("main");
 
-  tbl.innerHTML = "";
+  tableContainer.innerHTML = "";
 
   days.forEach(function(day, i) {
-    tbl.appendChild(Z("tr", null, [
-      Z("th", {colSpan: 4}, [
-        Z("h1", null, [document.createTextNode(day.day.toUpperCase())]),
+    tableContainer.appendChild(Z("table", {className: "default schedule"}, [
+      Z("thead", null, [
+        Z("caption", {id: day.day}, [document.createTextNode(day.day)]),
+        Z("tr", null, [
+          Z("th", null, [document.createTextNode("Location")]),
+          Z("th", null, [document.createTextNode("Name")]),
+          Z("th", null, [document.createTextNode("Who")]),
+          Z("th", null, [document.createTextNode("Time")]),
+        ]),
       ]),
+      Z("tbody", null, day.sessions.map(function(session) {
+        return Z("tr", null, [
+          Z("td", null, [document.createTextNode(session.location)]),
+          Z("td", null, [document.createTextNode(session.name)]),
+          Z("td", null, [document.createTextNode(session.who)]),
+          Z("td", null, [document.createTextNode(session.time)]),
+        ]);
+      })),
     ]));
 
-    day.sessions.forEach(function(session) {
-      tbl.appendChild(Z("tr", null, [
-        Z("td", null, [document.createTextNode(session.location)]),
-        Z("td", null, [document.createTextNode(session.name)]),
-        Z("td", null, [document.createTextNode(session.who)]),
-        Z("td", null, [document.createTextNode(session.time)]),
-      ]));
-    });
-
     if (i !== days.length - 1) {
-      tbl.appendChild(Z("tr", null, [
-        Z("th", {colSpan: 4}, [Z("hr")]),
-      ]));
+      tableContainer.appendChild(Z("hr"));
     }
   });
 };
